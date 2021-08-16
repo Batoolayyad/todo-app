@@ -3,10 +3,13 @@ import TodoForm from './form.js';
 import TodoList from './list.js';
 import { ListContext } from '../../context/listContext.js';
 import './todo.scss';
+import { SettingContext } from '../../context/settingsContext.js';
 
 function ToDo(props) {
 
   const listContext = useContext(ListContext);
+  const settingContext = useContext(SettingContext);
+
   const [state, setState] = useState([])
 
   useEffect(()=>{
@@ -20,11 +23,11 @@ function ToDo(props) {
 
   return (
     <>
-      <header>
+      <div className="formHeader">
         <h2>
-          There are {listContext.list.filter(item => !item.complete).length} Items To Complete
+          To Do List Manager ( {listContext.list.filter(item => !item.complete).length} )
         </h2>
-      </header>
+      </div>
 
       <section className="todo">
 
