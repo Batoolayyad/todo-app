@@ -35,10 +35,10 @@ In Phase 1, we’re going to perform some refactoring of the To Do application a
 ## Links:
 
 
+codesandbox: https://codesandbox.io/s/determined-jennings-q3fn4?file=/src/app.js
 
 
-
-
+PR: https://github.com/Batoolayyad/todo-app/pull/2
 
 
 
