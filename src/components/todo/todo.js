@@ -1,87 +1,53 @@
-import React, { useEffect, useState } from 'react';
-import useForm from '../../hooks/form.js';
+import React, { useState,useEffect,useContext } from 'react';
+import TodoForm from './form.js';
+import TodoList from './list.js';
+import { ListContext } from '../../context/listContext.js';
+import './todo.scss';
 
-import { v4 as uuid } from 'uuid';
+function ToDo(props) {
 
-const ToDo = () => {
+  const listContext = useContext(ListContext);
+  const [state, setState] = useState([])
 
-  const [list, setList] = useState([]);
-  const [incomplete, setIncomplete] = useState([]);
-  const { handleChange, handleSubmit } = useForm(addItem);
-
-  function addItem(item) {
-    console.log(item);
-    item.id = uuid();
-    item.complete = false;
-    setList([...list, item]);
-  }
-
-  function deleteItem(id) {
-    const items = list.filter( item => item.id !== id );
-    setList(items);
-  }
-
-  function toggleComplete(id) {
-
-    const items = list.map( item => {
-      if ( item.id == id ) {
-        item.complete = ! item.complete;
-      }
-      return item;
-    });
-
-    setList(items);
-
-  }
-
-  useEffect(() => {
-    let incompleteCount = list.filter(item => !item.complete).length;
-    setIncomplete(incompleteCount);
-    document.title = `To Do List: ${incomplete}`;
-  }, [list]);
+  useEffect(()=>{
+    let list = [
+      { _id: 1, complete: false, text: 'Clean the Kitchen', difficulty: 3, assignee: 'Person A' },
+      { _id: 2, complete: false, text: 'Do the Laundry', difficulty: 2, assignee: 'Person A' },
+      { _id: 3, complete: false, text: 'Walk the Dog', difficulty: 4, assignee: 'Person B' },
+      { _id: 4, complete: true, text: 'Do Homework', difficulty: 3, assignee: 'Person C' },
+      { _id: 5, complete: false, text: 'Take a Nap', difficulty: 1, assignee: 'Person B' },
+    ];
+    
+    setState(list);
+  },[])
+  
 
   return (
     <>
       <header>
-        <h1>To Do List: {incomplete} items pending</h1>
+        <h2>
+          There are {listContext.list.filter(item => !item.complete).length} Items To Complete
+        </h2>
       </header>
 
-      <form onSubmit={handleSubmit}>
+      <section className="todo">
 
-        <h2>Add To Do Item</h2>
+        <div>
+          <TodoForm
 
-        <label>
-          <span>To Do Item</span>
-          <input onChange={handleChange} name="text" type="text" placeholder="Item Details" />
-        </label>
-
-        <label>
-          <span>Assigned To</span>
-          <input onChange={handleChange} name="assignee" type="text" placeholder="Assignee Name" />
-        </label>
-
-        <label>
-          <span>Difficulty</span>
-          <input onChange={handleChange} defaultValue={3} type="range" min={1} max={5} name="difficulty" />
-        </label>
-
-        <label>
-          <button type="submit">Add Item</button>
-        </label>
-      </form>
-
-      {list.map(item => (
-        <div key={item.id}>
-          <p>{item.text}</p>
-          <p><small>Assigned to: {item.assignee}</small></p>
-          <p><small>Difficulty: {item.difficulty}</small></p>
-          <div onClick={() => toggleComplete(item.id)}>Complete: {item.complete.toString()}</div>
-          <hr />
+            />
         </div>
-      ))}
 
+        <div>
+          <TodoList
+            list={state}
+
+          />
+        </div>
+      </section>
     </>
   );
-};
+}
+
 
 export default ToDo;
