@@ -31,7 +31,7 @@ function TodoList(props) {
       })
       setList(temp);
     }
-  }, [settingsContext.view])
+  }, [listContext.list])
   function nextPage() {
     settingsContext.nextpage();
     setpage(page + 1);
@@ -72,9 +72,8 @@ function TodoList(props) {
           }
         })}
       </ul>
-      {page > 0 && <button onClick={prePage}>previous</button>}
-      {!(page == (Math.ceil(listContext.list.length / settingsContext.numberOfItems) - 1)) && <button onClick={nextPage}>Next</button>}
-      <button onClick={() => { settingsContext.setSettings(null, !settingsContext.view) }}>done</button>
+      {page > 0 && <button  className="pre-nxt" onClick={prePage}>previous</button>}
+      {!(page == (Math.ceil(listContext.list.length / settingsContext.numberOfItems) - 1)) && <button className="pre-nxt" onClick={nextPage}>Next</button>}
     </>
   );
 }
