@@ -35,15 +35,23 @@ In Phase 1, we’re going to perform some refactoring of the To Do application a
 ## Links:
 
 
-codesandbox: https://codesandbox.io/s/determined-jennings-q3fn4?file=/src/app.js
+codesandbox: https://codesandbox.io/s/hungry-oskar-yk1i9
 
 
-PR: https://github.com/Batoolayyad/todo-app/pull/2
+PR: https://github.com/Batoolayyad/todo-app/pull/5
 
 
 
 
-## LAB: Context API - Behaviors
+## UML:
+![whiteBoard31](whiteBoard31.PNG)
+
+
+
+
+
+
+## LAB 32: Context API - Behaviors
 #### To Do List Manager Phase 2: Incorporate configuration settings to the application
 
 In this phase, we’ll be adding an editor so that users can save their preferences for the application, allowing them to change some of the default behaviors
