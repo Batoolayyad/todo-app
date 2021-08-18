@@ -1,35 +1,13 @@
 import React from 'react';
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
+import SettingProvider from './context/settingContext.js';
+import ToDo from './components/todo.js';
 
-import ToDo from './components/todo/todo.js';
-import Header from './components/todo/header';
-import SettingsForm from './components/todo/settingsForm';
-import ListProvider from './context/listContext';
-import SettingsProvider from './context/settingsContext';
-
-
-export default class App extends React.Component {
-  render() {
-    return (
-      <>
-      <Router>
-          <Header />
-          <Switch>
-            <SettingsProvider>
-              <ListProvider>
-                <Route exact path='/'>
-                  <ToDo />
-                </Route>
-                <Route exact path='/settings'>
-                  <SettingsForm/>
-                </Route>
-              </ListProvider>
-            </SettingsProvider>
-          </Switch>
-        </Router>
-    </>
-    );
-  }
+function App() {
+  return (
+    <SettingProvider>
+      <ToDo />
+    </SettingProvider>
+  )
 }
 
+export default App
