@@ -42,8 +42,7 @@ const ToDo = () => {
 
   return (
     <>
-      <Header />
-      <h1>To Do List: {incomplete} items pending</h1>
+      <h1 style={{color:'white', padding:'10px'}}>To Do List: {incomplete} items pending</h1>
       <Form addItem={addItem} />
       <List list={list} toggleComplete={toggleComplete} />
     </>

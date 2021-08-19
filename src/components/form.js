@@ -5,20 +5,18 @@ import { Button, Label,Icon } from "@blueprintjs/core";
 function Form(props) {   
     const { handleChange, handleSubmit } = useForm(props.addItem);
     return (
-        <div style={{padding:'30px', margin:'20px', width:'50%'}}>
-            <form onSubmit={handleSubmit} style={{boarder:'sold 2px blue'}}>
+        <div style={{padding:'2.5%', margin:'1.5%', width:'20%', height:'70%', border:'solid 2.5px rgb(40,103,121)', borderRadius:'5px', backgroundColor:'rgb(34,66,82)', display:'inline-block', float:'left'}}>
+            <form onSubmit={handleSubmit} style={{color:'white'}}>
 
                 <h2>Add To Do Item</h2>
 
-                <Label class="bp3-label">
-                
+                <Label className="bp3-label">
                     <span className="bp3-text-muted">To Do Item</span>
                     <input  className="bp3-input" style={{width: "200px"}}  dir="auto" onChange={handleChange} name="text" type="text" placeholder="Item Details" />
-                
                 </Label>
 
             <div className="bp3-form-group">
-                <Label className="bp3-label" for="form-group-input">
+                <Label className="bp3-label" htmlFor="form-group-input">
                   Assigned To
                 </Label>
                 <div className="bp3-form-content">
@@ -37,7 +35,7 @@ function Form(props) {
                 </label>
                     <br></br>
                 <label>
-                    <Button style={{width: "200px",marginTop:'30px'}} type="submit">Add Item</Button>
+                    <Button style={{width: "200px",marginTop:'5%'}} type="submit">Add Item</Button>
                 </label>
             </form>
         </div>
