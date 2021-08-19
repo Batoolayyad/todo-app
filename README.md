@@ -99,11 +99,10 @@ In Phase 2, we’re going to extend the functionality of our application by allo
 
 
 codesandbox:
-https://codesandbox.io/s/silly-rhodes-08qo5
-
+https://codesandbox.io/s/sharp-brown-3lrot?resolutionWidth=770&resolutionHeight=675
 
 PR: 
-https://github.com/Batoolayyad/todo-app/pull/4
+https://github.com/Batoolayyad/todo-app/pull/6
 
 
 
