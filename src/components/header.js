@@ -5,7 +5,7 @@ import { Button, Navbar } from "@blueprintjs/core";
 
 function Header() {
     return (
-        <Navbar style={{backgroundColor:'rgb(235,241,245)'}}>
+        <Navbar style={{backgroundColor:'rgb(235,241,245)', margin:'0%'}}>
             <Navbar.Group >
                 <Navbar.Heading>To Do</Navbar.Heading>
                 <Navbar.Divider />

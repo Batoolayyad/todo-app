@@ -54,18 +54,20 @@ function List(props) {
 
     return (
         <>
-            <Button onClick={toggleView} >{settingsContext.showCompleted.toString()}</Button>
+           <div style={{width:'60%' , margin:'.5%', marginLeft:'10%',flaot:'right', display:'inline-block'}}>
+           <Button onClick={toggleView} style={{width:'25%', margin:'1.5%',backgroundColor:'rgb(210,234,227)' }}> Show Completed Items {settingsContext.showCompleted.toString()}</Button>
             {activeList.map(item => (
-        <Card key={item.id} style={{width:'30%' , hight:'30', margin:'20px', backgroundColor:'rgb(210,234,227)'}}>
-          <p>{item.text}</p>
-          <p><small>Assigned to: {item.assignee}</small></p>
-          <p><small>Difficulty: {item.difficulty}</small></p>
-          <div onClick={() => props.toggleComplete(item.id)}>Complete: {item.complete.toString()}</div>
-        </Card>
+            <Card key={item.id} style={{width:'70%', margin:'10px', backgroundColor:'rgb(48,94,99)',color:'white'}}>
+                <p>{item.text}</p>
+                <p><small>Assigned to: {item.assignee}</small></p>
+                <p><small>Difficulty: {item.difficulty}</small></p>
+                <div onClick={() => props.toggleComplete(item.id)}>Complete: {item.complete.toString()}</div>
+            </Card>
       ))}
      {activePage>1 && <Button onClick={()=>{setActivePage(activePage-1)}}>prev</Button>}
         {pages()}
       {activePage<numOfPages && <Button onClick={()=>{setActivePage(activePage+1)}} >next</Button>}
+      </div>
 
         </>
     )
