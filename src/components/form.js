@@ -12,7 +12,7 @@ function Form(props) {
 
                 <Label className="bp3-label">
                     <span className="bp3-text-muted">To Do Item</span>
-                    <input  className="bp3-input" style={{width: "200px"}}  dir="auto" onChange={handleChange} name="text" type="text" placeholder="Item Details" />
+                    <input  className="bp3-input" required  style={{width: "200px"}}  dir="auto" onChange={handleChange} name="text" type="text" placeholder="Item Details" />
                 </Label>
 
             <div className="bp3-form-group">
@@ -24,7 +24,7 @@ function Form(props) {
                     <span className="bp3-icon bp3-icon-calendar">
                      <Icon icon="calendar"  />
                     </span>
-                    <input className="bp3-input" style={{width: "200px"}}  dir="auto" onChange={handleChange} name="assignee" type="text" placeholder="  D / M / Y" />
+                    <input className="bp3-input" required style={{width: "200px"}}  dir="auto" onChange={handleChange} name="assignee" type="text" placeholder="  D / M / Y" />
                  </div>    
                </div>
             </div>
