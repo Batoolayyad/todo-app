@@ -9,7 +9,6 @@ import SettingsForm from './components/settingForm';
 import './style.css'
 import Auth from './components/auth';
 import Signup from './components/signup';
-import Login from './components/login';
 
 const EditLink = () => {
   return (
@@ -53,7 +52,6 @@ function App() {
         </Then>
         <Else>
           <Signup/>
-        {/* <div></div> */}
         </Else>
       </If>
    </>
