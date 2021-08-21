@@ -19,7 +19,6 @@ const Login = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(username, password)
     contextType.login(username, password);
   }
 

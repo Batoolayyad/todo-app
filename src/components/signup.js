@@ -11,7 +11,6 @@ const SignUp = () => {
 	const [role, setRole] = useState('user');
 
 	function changeUsername(e) {
-		console.log(e.target.value)
 		setUsername(e.target.value);
 	}
 
@@ -19,10 +18,7 @@ const SignUp = () => {
 		setPassword(e.target.value);
 	}
 
-	// function handleChangeEmail(e) {
-	// 	setEmail(e.target.value);
-	// }
-
+	
 	function handleChangeRole(e) {
 		setRole(e.target.value);
 	}
