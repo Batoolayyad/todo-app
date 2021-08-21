@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button, Navbar } from "@blueprintjs/core";
 import Login from './login'
-import Signup from './signup'
 
 
 function Header() {
@@ -14,7 +13,6 @@ function Header() {
                 <a href="/settings"><Button className="bp3-minimal" icon="cog" text="Settings" /></a>
                  <Login/>
                 </Navbar.Group>
-                 {/* <Signup/> */}
         </Navbar>
     )
 }
