@@ -170,3 +170,50 @@ codesandbox:
 
 ![whiteBoard33](UML33.PNG)
 
+
+
+
+## LAB 34 - API Integration
+#### To Do List Manager Phase 4: Integrating with a live API
+
+In this final phase, requiring that users be logged in through a live authentication server, in order to see the to do items. Additionally, based on their user type, they will be allowed (or denied) to perform actions such as editing or deleting them. All To Do items will be stored in a database, accessed through a deployed API
+
+
+#### Phase 4 Requirements
+
+
+
+##### Alter the Add, Toggle Complete, and Delete functions within your to do application to use your API instead of in memory state.
+##### Fetch the current list of items from the database on application start
+##### Whenever you add/update/delete an item, refresh the state so the user can instantly see the change
+
+### API Server
+
+#### GET /todo: Gets a list of all items
+- ‘POST /todo’: Adds an item
+- ‘PUT /todo’: Updates an item (you’ll use this to mark them as complete)
+- ‘DELETE /todo/:id’ : Deletes an item
+#### Authentication Server
+##### You will need a deployed Authenticated API Server, which supports:
+- Registration (/signup)
+- Login (/signin)
+- Authorization (via Bearer Token)
+- ACL (using user roles)
+- Make sure you have created the user roles and permissions lists that your front-end is expecting to tap into
+- To Do data model for storing the actual to do items
+
+
+
+
+### links:
+
+- https://github.com/Batoolayyad/todo-app/pull/12
+
+- https://jo9jl.csb.app/
+- https://codesandbox.io/s/black-dawn-jo9jl
+
+
+
+### UML
+
+![whiteBoard33](UML33.PNG)
