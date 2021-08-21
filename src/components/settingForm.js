@@ -46,8 +46,6 @@ function SettingsForm() {
                     <span className="bp3-control-indicator" name='view' type='checkbox' onChange={handleView}></span>
                     view completed items
                 </Label>
-                {/* <label>view completed items</label>
-                <input name='view' type='checkbox' onChange={handleView}></input> */}
                 <Button type='submit' style={{ width:'30%'}}>submit</Button>
             </form>
         </div>
